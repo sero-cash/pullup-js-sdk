@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Contract</title>
+    <script type="text/javascript" src="../node_modules/bignumber.js/bignumber.min.js"></script>
+    <script type="text/javascript" src="../dist/pullup-js-sdk.min.js"></script>
+    <script type="text/javascript">
+        var Pullup = require('pullup-js-sdk');
+        var pullup = new Pullup();
+        pullup.setProvider(new pullup.providers.HttpProvider("http://127.0.0.1:2345"));
+
+        //Query Account List
+        console.log(pullup.local.accountList());
+
+        //Query Account Detail
+        console.log("Detail: ", pullup.local.accountDetail('56k6dtdD4uhx4L45jNCGpiXmbMUuEPm1c3Y1cnYJx8y17buxNi7JuFPUaqKmBr7cExPmxqurLs3cPoSMPspkDqge'));
+
+        function showAccountList() {
+            document.getElementById("accounts").innerHTML = "";
+            var list = pullup.account.list();
+            var accountHtml = '';
+            for (ac of list) {
+                accountHtml += "<span>" + ac.PK + "</span><br/>";
+            }
+            document.getElementById("accounts").innerHTML = accountHtml;
+        }
+
+
+    </script>
+</head>
+<body style="text-align: center">
+<button onclick="showAccountList()">Load Account</button>
+<p id="accounts"></p>
+</body>
+</html>

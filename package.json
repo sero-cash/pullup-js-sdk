@@ -1,0 +1,54 @@
+{
+  "name": "pullup-js-sdk",
+  "version": "0.0.2",
+  "description": "pullup js sdk for dapp developer",
+  "main": "./index.js",
+  "directories": {
+    "lib": "./lib"
+  },
+  "scripts": {
+    "build": "gulp",
+    "watch": "gulp watch",
+    "lint": "jshint *.js lib",
+    "test": "mocha",
+    "test-coveralls": "istanbul cover _mocha -- -R spec && cat coverage/lcov.info | coveralls --verbose"
+  },
+  "keywords": [
+    "sero",
+    "pullup",
+    "js",
+    "sdk"
+  ],
+  "author": "sero",
+  "license": "LGPL-3.0",
+  "browser": {
+    "xmlhttprequest": "./lib/utils/browser-xhr.js"
+  },
+  "devDependencies": {
+    "bower": ">=1.4.1",
+    "chai": "^3.0.0",
+    "coveralls": "^2.11.2",
+    "browserify": "^16.5.0",
+    "del": ">=2.0.2",
+    "exorcist": "^0.4.0",
+    "gulp": "^4.0.2",
+    "gulp-jshint": ">=1.5.0",
+    "gulp-rename": ">=1.2.0",
+    "gulp-replace": "^0.5.3",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": ">=1.2.0",
+    "istanbul": "^0.4.4",
+    "jshint": ">=2.5.0",
+    "mocha": ">=2.3.3",
+    "sandboxed-module": "^2.0.2",
+    "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.0",
+    "crypto-js": "^3.1.9-1",
+    "serojs": "0.0.1",
+    "utf8": "^3.0.0",
+    "xhr2": "^0.2.0",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
